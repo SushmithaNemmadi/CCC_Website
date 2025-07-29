@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navbar Styles */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 30px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #a0c4ff;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a,
+.nav-link-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid transparent;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  min-width: 90px;
+}
+
+.nav-links a:hover,
+.nav-link-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #e0e0e0;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.nav-links .active-link {
+  font-weight: bold;
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+  border-color: #007bff;
+  transform: translateY(0);
+}
+
+/* Logout Button */
+.nav-link-button {
+  background-color: #dc3545;
+  border-color: #dc3545;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-link-button:hover {
+  background-color: #c82333;
+  border-color: #c82333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Body and Page Padding for Fixed Navbar */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* All page top padding to avoid hidden content */
+.page-container {
+  padding-top: 80px; /* Adjust to match navbar height */
+}
+
+/* Login & Register Page Styling */
+.login-page,
+.register-page {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.login-page input,
+.register-page input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Homepage Container Styling */
+.homepage-container {
+  /*background-image: url('../assets/homepage.png');*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding-top: 80px; /* Ensure content isn't hidden */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 20px;
+    align-items: flex-start;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar-left {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links a,
+  .nav-link-button {
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    min-width: unset;
+    flex-grow: 1;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  body {
+    padding-top: 150px;
   }
 }

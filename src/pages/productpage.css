@@ -1,0 +1,86 @@
+/* Grid layout for product cards */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+/* Product card style */
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Product image - fully visible */
+.product-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Product name and price */
+.product-name {
+  font-size: 18px;
+  margin: 12px 0 6px;
+  color: #333;
+}
+
+.product-price {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #4caf50;
+}
+
+/* Buttons layout */
+.product-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Neutral button styling */
+.product-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #e0e0e0; /* Light gray */
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.product-button:hover {
+  background-color: #d5d5d5; /* Slightly darker on hover */
+}
+
+/* Wishlist button */
+.product-button.wishlist {
+  background-color: #e0e0e0;
+}
+
+.product-button.wishlist:hover {
+  background-color: #d5d5d5;
+}
+
+/* Page title styling */
+.product-title {
+  font-size: 28px;
+  text-align: center;
+  margin-top: 30px;
+  color: #222;
+}
